@@ -5,12 +5,19 @@
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
     "main": "index.js",
     "scripts": {
+        "start": "webpack-dev-server --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jiaowochunge/DemoWebApp.git"
+    },
     "dependencies": {
         "cordova-browser": "^4.1.0",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-whitelist": "^1.3.3"
     },
     "cordova": {
@@ -18,7 +25,27 @@
             "cordova-plugin-whitelist": {}
         },
         "platforms": [
-            "browser"
+            "browser",
+            "ios"
         ]
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-react": "^6.24.1",
+        "clean-webpack-plugin": "^0.1.19",
+        "css-loader": "^0.28.11",
+        "file-loader": "^1.1.11",
+        "html-webpack-plugin": "^3.0.6",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "style-loader": "^0.20.3",
+        "uglifyjs-webpack-plugin": "^1.2.4",
+        "webpack": "^4.1.1",
+        "webpack-cli": "^2.0.12",
+        "webpack-dev-server": "^3.1.1",
+        "webpack-merge": "^4.1.2"
     }
 }

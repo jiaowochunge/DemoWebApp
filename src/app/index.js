@@ -20,6 +20,10 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        // 开发模式下，不会有这个事件发生，我们自己手动调用
+        if (process.env.NODE_ENV === 'development') {
+          this.onDeviceReady();
+        }
     },
 
     // deviceready Event Handler
@@ -32,14 +36,8 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
         console.log('Received Event: ' + id);
+        require('./app.jsx');
     }
 };
 
