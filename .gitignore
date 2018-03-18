@@ -1,0 +1,9 @@
+node_modules
+platforms
+plugins
+
+# 下面的文件忽略掉，目录结构需要保留
+www/*
+!www/.gitkeep
+
+*DS_Store
